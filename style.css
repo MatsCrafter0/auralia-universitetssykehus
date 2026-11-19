@@ -21,3 +21,17 @@
 #employee-table td.employee-distinction{background:transparent!important;color:#ffff00!important;text-shadow:none!important;font-weight:800;text-align:center}
 #employee-table td.employee-distinction.role-director{background:#f5d33f!important;color:#111!important;text-shadow:none!important}
 #employee-table td.employee-role.role-director{background:transparent!important;color:#e4edf2!important;text-align:left;font-weight:normal}
+
+/* Farger hentet fra original ansattliste i Excel */
+#employee-table td.employee-role.rank-director{background:#f1c232!important;color:#141414!important;font-weight:700;text-align:center}
+#employee-table td.employee-role.rank-lead{background:#e69138!important;color:#141414!important;font-weight:700;text-align:center}
+#employee-table td.employee-role.rank-overlege{background:#ead1dc!important;color:#171717!important;font-weight:700;text-align:center}
+#employee-table td.employee-role.rank-lege{background:#bfe1f6!important;color:#171717!important;font-weight:700;text-align:center}
+#employee-table td.employee-role.rank-student{background:#cfe2f3!important;color:#171717!important;font-weight:700;text-align:center}
+#employee-table td.employee-role.rank-psykolog{background:#ffe5a0!important;color:#171717!important;font-weight:700;text-align:center}
+#employee-table td.employee-role.rank-paramedic{background:#ffcfc9!important;color:#171717!important;font-weight:700;text-align:center}
+#employee-table td.employee-role.rank-laerling{background:#fce5cd!important;color:#171717!important;font-weight:700;text-align:center}
+#employee-table td.employee-distinction.rank-normal{background:#999!important;color:#ffff00!important;font-weight:800}
+#employee-table td.employee-distinction.rank-top{background:#f1c232!important;color:#000!important;font-weight:800}
+#employee-table tbody tr.employee-group-start td{border-top:13px solid #0b1928!important}
+#employee-table tbody tr.employee-group-start td.employee-role{background-clip:padding-box}
