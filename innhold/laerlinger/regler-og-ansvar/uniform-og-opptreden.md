@@ -17,4 +17,4 @@ Møt pasienter, pårørende, kolleger og nødetater med høflighet og respekt. M
 
 ## Mer om reglene
 
-Se hovedhåndbokens [Uniform og bekledning](https://auralia-universitetssykehus.gitbook.io/auralia-universitetssykehus-docs/bFQZOUHYM4q2rhjvjWcV/ansatte-og-graderinger/uniform-og-bekledning) og [Oppførsel og orden](https://auralia-universitetssykehus.gitbook.io/auralia-universitetssykehus-docs/bFQZOUHYM4q2rhjvjWcV/reglement/oppforsel-og-orden). Følg gjeldende regler og spør veilederen dersom du er usikker på uniform eller opptreden.
+Se hovedhåndbokens [Uniform og bekledning](https://matscrafter0.github.io/auralia-universitetssykehus/#/hovedhandbok/ansatte-og-graderinger/uniform-og-bekledning) og [Oppførsel og orden](https://matscrafter0.github.io/auralia-universitetssykehus/#/hovedhandbok/reglement/oppforsel-og-orden). Følg gjeldende regler og spør veilederen dersom du er usikker på uniform eller opptreden.
