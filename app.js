@@ -3,6 +3,23 @@ const employeeSheetId='1BHY4o3eRJWvleRgDok8kp4zFnQTw5z0ljbdf46zKVtc';
 let employeeRows=[],employeeHeaders=[],employeeLoadedSheet='',employeeRequest=0;
 const employeeAllowedSheets=['Direktoratet/Ledelsen','Avd. Lege','Avd. Psykiatrisk','Avd. Ambulanse/Paramedic','AMB Skolen','Ansattdata','Oppsigelse'];
 const employeeSourceSheets={'Direktoratet/Ledelsen':'DirektoratetLedelsen','Avd. Psykiatrisk':'Avd. Psykriatisk','Avd. Ambulanse/Paramedic':'Avd. AmbulanseParamedic'};
+const employeeFallbackData={"Avd. Psykiatrisk":"eJyVksFqg0AQhl9l8ShRdidpkvZmTwnUEnKVHJa4aUXrFmcb6CXP1XtfrKNbIWk1YWDB3fGfb+f3N8uCZylVMAkA3rTDQ9EYOqTavRorthaxNkiFpEbtHG1O6zBcn2izMhWanOSl+/5q+oKIhKdJmEdyEamlkPKhW8FukgX0yq8n6n3xvA6XIMZinAlt1xggPB9JFDW+/wdMewDZbWG5qZyO7d7ouvPb7D9QrHR1tA2a+q9jz0/pSiR8Kehyc4Gf9Z6ViiTc9vxLTNJHsaVh7QXs7qpZ33jMYz+F2OBnWWjXFFieQ+bXIP0nF/o2J1ajpHYaerSdtrJtZRMpyZMz6eM/wqB8ypPPePLxoAbl45EMyhc8+ZInv2fJgZcq8FIFXqrASxV4qQIvVeClCj7V3Q/EuGR2","Avd. Ambulanse/Paramedic":"eJyVk81OwkAURl9l0iWhzfwgoLsaTSARY9gSFiOMSiit6RSWPJd7X8wLbQ3IvRcnaaAM5/s6t6edzaJnKVXUjbTe2Mq/rUoHPya2+nCFmBbe587DQpp7W1Vwsh93OuM9nIxc5t0S8HX1/VW2CyIWdZvU/VgOYjUUUt4dj2jenUXwV308Qfa97jvWpd4ngu7UhxRV0Dndkljl/vOywLQFMO6hbOmyyibFwtn8OG+52HoxstmuKL3L/05c90/gkh7q1wIu7s7qe+3MSsVSX5+5aUwn92IKmy3Oym7YYevgbpnUuxDp5nWb2dy704oBV9HecGGvtSSK7IEa+Hyxpd3AyuJwex4fYiPDE7RbKmGCE73gBC2BSvSDE7QlKjEMTtyGJpQkE/DYNg+tab5j0WOM4zztG+dp2zhPu8Z52jTO055xnraM87RjnP81HP8vECpYcYIbTJ/gnF8EN9z2EZ7Ti+CcXQTn5CI45xbBObUITr+7GK45rwgeplWHadXMW9tQ6oRmpCI04xShGaUIzRhFaEYoQjM+L2nD6ERoxiZCMzIROsilCXJpglyaIJcmyKWpXc5/AI/JdVI="};
+async function showEmployeeFallback(sheet,request){
+ const encoded=employeeFallbackData[sheet];
+ if(!encoded||request!==employeeRequest)return false;
+ try{
+  const bytes=Uint8Array.from(atob(encoded),c=>c.charCodeAt(0));
+  const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream('deflate'));
+  const rows=JSON.parse(await new Response(stream).text());
+  if(request!==employeeRequest)return true;
+  employeeHeaders=['TN','Discord','Navn','Ansatt/Ledig','Distinksjon','Stilling','Kallesignal','Ansettelsesdato'];
+  employeeRows=rows.map(row=>row.map((v,i)=>i===7&&/^\\d{4}-\\d{2}-\\d{2}/.test(v)?v.slice(8,10)+'.'+v.slice(5,7)+'.'+v.slice(0,4):v));
+  employeeLoadedSheet=sheet;
+  renderEmployees();
+  $('employee-status').textContent+=' (lagret kopi fra Excel – ikke direkteoppdatert)';
+  return true;
+ }catch(e){return false}
+}
 function employeeRoleColor(role){
  const s=String(role||'').toLocaleLowerCase('no').trim();
  if(/^(helsedirektør|ass\.? helsedirektør|helse inspektør|medisinsk leder|amb rektor)$/.test(s))return 'rank-director';
@@ -58,7 +75,7 @@ function loadEmployees(force=false){
  const script=document.createElement('script');script.id='employee-data-script-'+request;
  let settled=false;
  const cleanup=()=>{delete window[cb];script.remove()};
- window[cb]=function(res){
+ window[cb]=async function(res){
   if(settled||request!==employeeRequest)return;settled=true;cleanup();
   try{
    if(res.status!=='ok'||!res.table)throw Error('Google Sheets returnerte ingen data');
@@ -81,12 +98,12 @@ function loadEmployees(force=false){
    }
    employeeHeaders=keep.map(i=>headers[i]);employeeRows=rows.map(row=>keep.map(i=>row[i]??'')).filter(row=>row.some(v=>String(v).trim()));
    employeeLoadedSheet=sheet;renderEmployees();
-  }catch(e){$('employee-table').innerHTML='';$('employee-status').textContent=String(e.message||'Kunne ikke hente denne fanen.');}
+  }catch(e){if(!await showEmployeeFallback(sheet,request)){$('employee-table').innerHTML='';$('employee-status').textContent=String(e.message||'Kunne ikke hente denne fanen.');}}
  };
  script.src='https://docs.google.com/spreadsheets/d/'+employeeSheetId+'/gviz/tq?sheet='+encodeURIComponent(employeeSourceSheets[sheet]||sheet)+'&tqx='+encodeURIComponent('out:json;responseHandler:'+cb)+'&tq='+encodeURIComponent('select *')+'&_='+Date.now();
- script.onerror=()=>{if(settled||request!==employeeRequest)return;settled=true;cleanup();$('employee-status').textContent='Kunne ikke laste fanen. Kontroller tilgang i Google Sheets.'};
+ script.onerror=async()=>{if(settled||request!==employeeRequest)return;settled=true;cleanup();if(!await showEmployeeFallback(sheet,request))$('employee-status').textContent='Kunne ikke laste fanen. Kontroller tilgang i Google Sheets.'};
  document.head.appendChild(script);
- setTimeout(()=>{if(settled||request!==employeeRequest)return;settled=true;cleanup();$('employee-status').textContent='Google Sheets svarte ikke for denne fanen.'},12000);
+ setTimeout(async()=>{if(settled||request!==employeeRequest)return;settled=true;cleanup();if(!await showEmployeeFallback(sheet,request))$('employee-status').textContent='Google Sheets svarte ikke for denne fanen.'},12000);
 }
 $('employee-sheet').addEventListener('change',()=>{employeeLoadedSheet='';loadEmployees(true)});
 $('employee-search').addEventListener('input',()=>{if(employeeLoadedSheet)renderEmployees()});
