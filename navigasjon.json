@@ -1,0 +1,434 @@
+{
+  "hovedhandbok": [
+    {
+      "title": "Auralia Universitetssykehus",
+      "path": "velkommen",
+      "children": []
+    },
+    {
+      "title": "Hurtigguide for ansatte",
+      "path": "hurtigguide-for-ansatte",
+      "children": []
+    },
+    {
+      "title": "Ansatte og graderinger",
+      "path": "ansatte-og-graderinger",
+      "children": [
+        {
+          "title": "Stillingsgrader",
+          "path": "ansatte-og-graderinger/stillingsgrader",
+          "children": []
+        },
+        {
+          "title": "Kommandolinje og ansvarsområder",
+          "path": "ansatte-og-graderinger/kommandolinje-og-ansvarsomrader",
+          "children": []
+        },
+        {
+          "title": "Førerkort og tjenestekrav",
+          "path": "ansatte-og-graderinger/forerkort-og-tjenestekrav",
+          "children": []
+        },
+        {
+          "title": "Uniform og bekledning",
+          "path": "ansatte-og-graderinger/uniform-og-bekledning",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "Personal og ledelse",
+      "path": "personal-og-ledelse",
+      "children": [
+        {
+          "title": "Fravær og permisjon",
+          "path": "personal-og-ledelse/fravaer-og-permisjon",
+          "children": []
+        },
+        {
+          "title": "Nedrykk og tilbakekalling av ansvar",
+          "path": "personal-og-ledelse/nedrykk-og-tilbakekalling-av-ansvar",
+          "children": []
+        },
+        {
+          "title": "Oppsigelse og avslutning av arbeidsforhold",
+          "path": "personal-og-ledelse/oppsigelse-og-avslutning-av-arbeidsforhold",
+          "children": []
+        },
+        {
+          "title": "Inhabilitet i personalsaker",
+          "path": "personal-og-ledelse/inhabilitet-i-personalsaker",
+          "children": []
+        },
+        {
+          "title": "Avdelingsledernes ansvar",
+          "path": "personal-og-ledelse/avdelingsledernes-ansvar",
+          "children": []
+        },
+        {
+          "title": "Midlertidig fungerende leder",
+          "path": "personal-og-ledelse/midlertidig-fungerende-leder",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "Reglement",
+      "path": "reglement",
+      "children": [
+        {
+          "title": "Regler på arbeidsplassen",
+          "path": "reglement/regler-pa-arbeidsplassen",
+          "children": []
+        },
+        {
+          "title": "Regler utenfor arbeidstid",
+          "path": "reglement/regler-utenfor-arbeidstid",
+          "children": []
+        },
+        {
+          "title": "Oppførsel og orden",
+          "path": "reglement/oppforsel-og-orden",
+          "children": []
+        },
+        {
+          "title": "Kriminelle handlinger",
+          "path": "reglement/kriminelle-handlinger",
+          "children": []
+        },
+        {
+          "title": "Kommunikasjon med presse og publikum",
+          "path": "reglement/kommunikasjon-med-presse-og-publikum",
+          "children": []
+        },
+        {
+          "title": "Taushetsplikt",
+          "path": "reglement/taushetsplikt",
+          "children": []
+        },
+        {
+          "title": "Utlevering av pasientopplysninger",
+          "path": "reglement/utlevering-av-pasientopplysninger",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "Rapportering og disiplin",
+      "path": "rapportering-og-disiplin",
+      "children": [
+        {
+          "title": "Rapportering og avvik",
+          "path": "rapportering-og-disiplin/rapportering-og-avvik",
+          "children": []
+        },
+        {
+          "title": "Advarsler og disiplinærsaker",
+          "path": "rapportering-og-disiplin/advarsler-og-disiplinaersaker",
+          "children": []
+        },
+        {
+          "title": "Tjenestefeil og håndtering av hendelser",
+          "path": "rapportering-og-disiplin/tjenestefeil-og-handtering-av-hendelser",
+          "children": []
+        },
+        {
+          "title": "Håndtering av klager fra pasienter",
+          "path": "rapportering-og-disiplin/handtering-av-klager-fra-pasienter",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "Pasientbehandling",
+      "path": "pasientbehandling",
+      "children": [
+        {
+          "title": "Pasientprioritering og alvorlige hendelser",
+          "path": "pasientbehandling/pasientprioritering-og-alvorlige-hendelser",
+          "children": []
+        },
+        {
+          "title": "Aggressive pasienter",
+          "path": "pasientbehandling/aggressive-pasienter",
+          "children": []
+        },
+        {
+          "title": "Pasienter som forlater sykehuset mot råd",
+          "path": "pasientbehandling/pasienter-som-forlater-sykehuset-mot-rad",
+          "children": []
+        },
+        {
+          "title": "Dødsfall og pårørende",
+          "path": "pasientbehandling/dodsfall-og-parorende",
+          "children": []
+        },
+        {
+          "title": "Bevisstløse pasienter",
+          "path": "pasientbehandling/bevisstlose-pasienter",
+          "children": []
+        },
+        {
+          "title": "Pasienter i politiets varetekt",
+          "path": "pasientbehandling/pasienter-i-politiets-varetekt",
+          "children": []
+        },
+        {
+          "title": "Pasienter mistenkt for kriminalitet",
+          "path": "pasientbehandling/pasienter-mistenkt-for-kriminalitet",
+          "children": []
+        },
+        {
+          "title": "Uenighet om obduksjonsfunn",
+          "path": "pasientbehandling/uenighet-om-obduksjonsfunn",
+          "children": []
+        },
+        {
+          "title": "Medisiner og medikamenter",
+          "path": "pasientbehandling/medisiner-og-medikamenter",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "Sykehusdrift",
+      "path": "sykehusdrift",
+      "children": [
+        {
+          "title": "Operasjoner og rollefordeling",
+          "path": "sykehusdrift/operasjoner-og-rollefordeling",
+          "children": []
+        },
+        {
+          "title": "Pasientrapport og overlevering",
+          "path": "sykehusdrift/pasientrapport-og-overlevering",
+          "children": []
+        },
+        {
+          "title": "Oppfølging etter operasjoner",
+          "path": "sykehusdrift/oppfolging-etter-operasjoner",
+          "children": []
+        },
+        {
+          "title": "Besøkende og pårørende på sykehuset",
+          "path": "sykehusdrift/besokende-og-parorende-pa-sykehuset",
+          "children": []
+        },
+        {
+          "title": "Kapasitet og fullt sykehus",
+          "path": "sykehusdrift/kapasitet-og-fullt-sykehus",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "Operativ tjeneste",
+      "path": "operativ-tjeneste",
+      "children": [
+        {
+          "title": "Tjenesteutstyr",
+          "path": "operativ-tjeneste/tjenesteutstyr",
+          "children": []
+        },
+        {
+          "title": "Radio og samband",
+          "path": "operativ-tjeneste/radio-og-samband",
+          "children": []
+        },
+        {
+          "title": "Sambandsfarger og 01",
+          "path": "operativ-tjeneste/sambandsfarger-og-01",
+          "children": []
+        },
+        {
+          "title": "Feil bruk av samband",
+          "path": "operativ-tjeneste/feil-bruk-av-samband",
+          "children": []
+        },
+        {
+          "title": "Ambulanse og sivil deltakelse",
+          "path": "operativ-tjeneste/ambulanse-og-sivil-deltakelse",
+          "children": []
+        },
+        {
+          "title": "Utrykningsprosedyrer",
+          "path": "operativ-tjeneste/utrykningsprosedyrer",
+          "children": []
+        },
+        {
+          "title": "Samarbeid med nødetater",
+          "path": "operativ-tjeneste/samarbeid-med-nodetater",
+          "children": []
+        },
+        {
+          "title": "Innsatsleder Helse (ILH)",
+          "path": "operativ-tjeneste/innsatsleder-helse-ilh",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "Beredskap",
+      "path": "beredskap",
+      "children": [
+        {
+          "title": "Masseskadehendelser",
+          "path": "beredskap/masseskadehendelser",
+          "children": []
+        },
+        {
+          "title": "Sikkerhet på sykehuset",
+          "path": "beredskap/sikkerhet-pa-sykehuset",
+          "children": []
+        },
+        {
+          "title": "Brann på sykehuset",
+          "path": "beredskap/brann-pa-sykehuset",
+          "children": []
+        },
+        {
+          "title": "Grønt farenivå",
+          "path": "beredskap/gront-fareniva",
+          "children": []
+        },
+        {
+          "title": "Gult farenivå",
+          "path": "beredskap/gult-fareniva",
+          "children": []
+        },
+        {
+          "title": "Rødt farenivå",
+          "path": "beredskap/rodt-fareniva",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "Kurs og sertifiseringer",
+      "path": "kurs-og-sertifiseringer",
+      "children": [
+        {
+          "title": "LPS-kurs",
+          "path": "kurs-og-sertifiseringer/lps-kurs",
+          "children": []
+        },
+        {
+          "title": "160-kurs",
+          "path": "kurs-og-sertifiseringer/160-kurs",
+          "children": []
+        },
+        {
+          "title": "Sambandskurs",
+          "path": "kurs-og-sertifiseringer/sambandskurs",
+          "children": []
+        },
+        {
+          "title": "ILH-kurs",
+          "path": "kurs-og-sertifiseringer/ilh-kurs",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "RP-kvalitet og realisme",
+      "path": "rp-kvalitet-og-realisme",
+      "children": []
+    }
+  ],
+  "laerlinger": [
+    {
+      "title": "Velkommen",
+      "path": "velkommen",
+      "children": []
+    },
+    {
+      "title": "Oppstart og opplæring",
+      "path": "oppstart-og-opplaering",
+      "children": [
+        {
+          "title": "Lærlingperioden",
+          "path": "oppstart-og-opplaering/laerlingperioden",
+          "children": []
+        },
+        {
+          "title": "Obligatoriske kurs",
+          "path": "oppstart-og-opplaering/obligatoriske-kurs",
+          "children": []
+        },
+        {
+          "title": "Første vakt som lærling",
+          "path": "oppstart-og-opplaering/forste-vakt-som-laerling",
+          "children": []
+        },
+        {
+          "title": "Under opplæring",
+          "path": "oppstart-og-opplaering/under-opplaering",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "Regler og ansvar",
+      "path": "regler-og-ansvar",
+      "children": [
+        {
+          "title": "Uniform og opptreden",
+          "path": "regler-og-ansvar/uniform-og-opptreden",
+          "children": []
+        },
+        {
+          "title": "Taushetsplikt",
+          "path": "regler-og-ansvar/taushetsplikt",
+          "children": []
+        },
+        {
+          "title": "Medisiner og medikamenter",
+          "path": "regler-og-ansvar/medisiner-og-medikamenter",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "Praktisk tjeneste",
+      "path": "praktisk-tjeneste",
+      "children": [
+        {
+          "title": "Utstyr og ambulanse",
+          "path": "praktisk-tjeneste/utstyr-og-ambulanse",
+          "children": []
+        },
+        {
+          "title": "Radio og samband",
+          "path": "praktisk-tjeneste/radio-og-samband",
+          "children": []
+        },
+        {
+          "title": "Pasientbehandling og prioritering",
+          "path": "praktisk-tjeneste/pasientbehandling-og-prioritering",
+          "children": []
+        },
+        {
+          "title": "Samarbeid med politiet",
+          "path": "praktisk-tjeneste/samarbeid-med-politiet",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "Vurdering og veien videre",
+      "path": "vurdering-og-veien-videre",
+      "children": [
+        {
+          "title": "Avsluttende vurdering",
+          "path": "vurdering-og-veien-videre/avsluttende-vurdering",
+          "children": []
+        },
+        {
+          "title": "Veien videre",
+          "path": "vurdering-og-veien-videre/veien-videre",
+          "children": []
+        }
+      ]
+    }
+  ]
+}
