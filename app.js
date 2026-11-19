@@ -2,14 +2,7 @@ let tree={},flat=[];const $=id=>document.getElementById(id);const esc=s=>String(
 const employeeSheetId='1BHY4o3eRJWvleRgDok8kp4zFnQTw5z0ljbdf46zKVtc';
 let employeeRows=[],employeeHeaders=[],employeeLoadedSheet='',employeeRequest=0;
 const employeeAllowedSheets=['Direktoratet/Ledelsen','Avd. Lege','Avd. Psykiatrisk','Avd. Ambulanse/Paramedic','AMB Skolen','Ansattdata','Oppsigelse'];
-function employeeRoleColor(role){
- const s=String(role||'').toLocaleLowerCase('no').trim();
- if(!s)return '';
- if(/helsedirektør|ass\\.?\\s*helsedirektør/.test(s))return 'role-gold';
- if(/helse\\s*inspektør|medisinsk\\s*leder|amb\\s*rektor/.test(s))return 'role-gold';
- if(/avd\\.?\\s*leder|ass\\.?\\s*avd\\.?\\s*leder|opplæringsansvarlig/.test(s))return 'role-orange';
- return 'role-default';
-}
+function employeeRoleColor(role){const s=String(role||'').toLocaleLowerCase('no').trim();return s==='helsedirektør'||s==='ass. helsedirektør'||s==='ass helsedirektør'?'role-director':'';}
 function renderEmployees(){
  const q=$('employee-search').value.trim().toLocaleLowerCase('no');
  const rows=employeeRows.filter(row=>row.some(v=>String(v).toLocaleLowerCase('no').includes(q)));
@@ -22,7 +15,7 @@ function renderEmployees(){
   return '<tr>'+row.map((v,i)=>{
    let cl='';
    if(i===roleIndex&&color)cl=' class="employee-role '+color+'"';
-   else if(i===badgeIndex&&color)cl=' class="employee-distinction '+color+'"';
+   else if(i===badgeIndex)cl=' class="employee-distinction '+(color||'role-normal')+'"';
    else if(i===statusIndex){const status=String(v).toLocaleLowerCase('no');if(status.includes('ledig'))cl=' class="employee-vacant"';else if(status.includes('ansatt'))cl=' class="employee-active"'}
    return '<td'+cl+'>'+esc(v)+'</td>';
   }).join('')+'</tr>';
