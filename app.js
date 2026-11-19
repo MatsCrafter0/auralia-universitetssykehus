@@ -2,6 +2,7 @@ let tree={},flat=[];const $=id=>document.getElementById(id);const esc=s=>String(
 const employeeSheetId='1BHY4o3eRJWvleRgDok8kp4zFnQTw5z0ljbdf46zKVtc';
 let employeeRows=[],employeeHeaders=[],employeeLoadedSheet='',employeeRequest=0;
 const employeeAllowedSheets=['Direktoratet/Ledelsen','Avd. Lege','Avd. Psykiatrisk','Avd. Ambulanse/Paramedic','AMB Skolen','Ansattdata','Oppsigelse'];
+const employeeSourceSheets={'Direktoratet/Ledelsen':'DirektoratetLedelsen','Avd. Psykiatrisk':'Avd. Psykriatisk','Avd. Ambulanse/Paramedic':'Avd. AmbulanseParamedic'};
 function employeeRoleColor(role){
  const s=String(role||'').toLocaleLowerCase('no').trim();
  if(/^(helsedirektør|ass\.? helsedirektør|helse inspektør|medisinsk leder|amb rektor)$/.test(s))return 'rank-director';
@@ -76,7 +77,7 @@ function loadEmployees(force=false){
    employeeLoadedSheet=sheet;renderEmployees();
   }catch(e){$('employee-status').textContent='Kunne ikke hente denne fanen. Kontroller lesetilgangen i Google Sheets.'}
  };
- script.src='https://docs.google.com/spreadsheets/d/'+employeeSheetId+'/gviz/tq?sheet='+encodeURIComponent(sheet)+'&tqx='+encodeURIComponent('out:json;responseHandler:'+cb)+'&tq='+encodeURIComponent('select *')+'&_='+Date.now();
+ script.src='https://docs.google.com/spreadsheets/d/'+employeeSheetId+'/gviz/tq?sheet='+encodeURIComponent(employeeSourceSheets[sheet]||sheet)+'&tqx='+encodeURIComponent('out:json;responseHandler:'+cb)+'&tq='+encodeURIComponent('select *')+'&_='+Date.now();
  script.onerror=()=>{if(settled||request!==employeeRequest)return;settled=true;cleanup();$('employee-status').textContent='Kunne ikke laste fanen. Kontroller tilgang i Google Sheets.'};
  document.head.appendChild(script);
  setTimeout(()=>{if(settled||request!==employeeRequest)return;settled=true;cleanup();$('employee-status').textContent='Google Sheets svarte ikke for denne fanen.'},12000);
