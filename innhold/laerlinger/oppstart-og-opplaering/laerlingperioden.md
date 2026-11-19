@@ -19,4 +19,4 @@ Helseledelsen kan i særskilte tilfeller godkjenne unntak fra den ukelange perio
 
 ## Praktisk start
 
-Bruk [Første vakt som lærling](https://auralia-universitetssykehus.gitbook.io/auralia-or-laerling-handbok/taoYXLjcjzz2zNBS7uaT/oppstart-og-opplaering/forste-vakt-som-laerling) til å forberede første vakt. Den ukelange perioden og eventuelle unntak følger fortsatt reglene over; sjekklisten innfører ikke nye godkjenningskrav.
+Bruk [Første vakt som lærling](https://matscrafter0.github.io/auralia-universitetssykehus/#/laerlinger/oppstart-og-opplaering/forste-vakt-som-laerling) til å forberede første vakt. Den ukelange perioden og eventuelle unntak følger fortsatt reglene over; sjekklisten innfører ikke nye godkjenningskrav.
