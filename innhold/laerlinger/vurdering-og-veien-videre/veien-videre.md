@@ -8,7 +8,7 @@ Auralia Universitetssykehus ønsker at alle lærlinger skal utvikle seg til tryg
 
 Når helseledelsen har bekreftet at du er godkjent for videre tjeneste, skal du fortsatt følge gjeldende stillingskrav og avklare hvilke oppgaver du har myndighet til å utføre. Godkjenning som lærling gir ikke automatisk nye kurs, grader eller selvstendige behandlingsfullmakter.
 
-Bruk hovedhåndbokens [Stillingsgrader](https://auralia-universitetssykehus.gitbook.io/auralia-universitetssykehus-docs/bFQZOUHYM4q2rhjvjWcV/ansatte-og-graderinger/stillingsgrader), [Kommandolinje og ansvarsområder](https://auralia-universitetssykehus.gitbook.io/auralia-universitetssykehus-docs/bFQZOUHYM4q2rhjvjWcV/ansatte-og-graderinger/kommandolinje-og-ansvarsomrader) og [Kurs og sertifiseringer](https://auralia-universitetssykehus.gitbook.io/auralia-universitetssykehus-docs/bFQZOUHYM4q2rhjvjWcV/kurs-og-sertifiseringer) som oppslagsverk. Spør ansvarlig leder om videre opplæring eller neste steg.
+Bruk hovedhåndbokens [Stillingsgrader](https://matscrafter0.github.io/auralia-universitetssykehus/#/hovedhandbok/ansatte-og-graderinger/stillingsgrader), [Kommandolinje og ansvarsområder](https://matscrafter0.github.io/auralia-universitetssykehus/#/hovedhandbok/ansatte-og-graderinger/kommandolinje-og-ansvarsomrader) og [Kurs og sertifiseringer](https://matscrafter0.github.io/auralia-universitetssykehus/#/hovedhandbok/kurs-og-sertifiseringer) som oppslagsverk. Spør ansvarlig leder om videre opplæring eller neste steg.
 
 Fortsett å være lærevillig, vis respekt, følg rutinene og bidra til gode opplevelser for pasienter og kolleger.
 
