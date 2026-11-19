@@ -62,7 +62,11 @@ function renderEmployees(){
    if(i===roleIndex&&dropdownSheet)cl=' class="employee-dropdown '+(rank||'rank-unassigned')+'"';
    else if(i===roleIndex&&rank)cl=' class="employee-role '+rank+'"';
    else if(i===badgeIndex)cl=' class="employee-distinction '+(String(role).toLocaleLowerCase('no').trim()==='helsedirektør'||/^ass\.? helsedirektør$/i.test(String(role).trim())?'rank-top':'rank-normal')+'"';
-   else if(i===statusIndex){const status=String(v).toLocaleLowerCase('no');if(status.includes('ledig'))cl=' class="employee-vacant"';else if(status.includes('ansatt'))cl=' class="employee-active"'}
+   else if(i===statusIndex){
+    const status=String(v??'').trim().toLocaleLowerCase('no');
+    const statusClasses={'ledig':'employee-vacant','ansatt':'employee-active','ferie':'employee-on-leave','permitert':'employee-permitted','vikar':'employee-substitute','sykemeldt':'employee-sick'};
+    if(statusClasses[status])cl=' class="'+statusClasses[status]+'"';
+   }
    return '<td'+cl+'>'+esc(v)+'</td>';
   }).join('')+'</tr>';
  }).join('')+'</tbody>';
