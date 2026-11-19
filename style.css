@@ -53,3 +53,6 @@
 
 /* Arbeidskontrakt */
 #contract[hidden]{display:none}#contract{max-width:850px;min-height:calc(100vh - 140px);margin:auto;padding:55px 24px 100px}#contract h1{font-size:clamp(36px,5vw,56px);letter-spacing:-.045em}#contract p{color:#b6cbd6;line-height:1.8;font-size:17px}.contract-button{display:inline-block;background:#55dac6;color:#092027;text-decoration:none;font-weight:800;border-radius:12px;padding:16px 22px;margin:18px 0}.contract-button:hover{background:#86eddb}#contract .contract-note{font-size:13px;color:#9fb5c3}.contract-home{display:block;max-width:550px;margin-top:22px}.contract-home p{min-height:0!important}
+
+/* AMB 1/2/3 are dropdown-based rank cells in the ambulance sheet; match the grey spreadsheet fill. */
+#employee-table td.employee-role.rank-amb{background:#999999!important;color:#111!important;text-align:center!important;font-weight:800!important;vertical-align:middle}
