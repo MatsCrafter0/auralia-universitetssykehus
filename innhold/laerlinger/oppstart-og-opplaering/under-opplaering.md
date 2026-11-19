@@ -23,7 +23,7 @@ Dette er et **eksempel på en god læringsøkt**, ikke en ny fast timeplan:
 
 Veilederen har ansvar for å gi instrukser innenfor opplæringen. Du har ansvar for å følge dem og si fra hvis du ikke forstår en oppgave.
 
-Se også [Første vakt som lærling](https://auralia-universitetssykehus.gitbook.io/auralia-or-laerling-handbok/taoYXLjcjzz2zNBS7uaT/oppstart-og-opplaering/forste-vakt-som-laerling).
+Se også [Første vakt som lærling](https://matscrafter0.github.io/auralia-universitetssykehus/#/laerlinger/oppstart-og-opplaering/forste-vakt-som-laerling).
 
 ## Når regler ikke følges
 
