@@ -30,6 +30,7 @@ function employeeRoleColor(role){
  if(s==='psykolog')return 'rank-psykolog';
  if(s==='paramedic')return 'rank-paramedic';
  if(s==='lærling')return 'rank-laerling';
+ if(/^amb\s*[123]$/.test(s))return 'rank-amb';
  return '';
 }
 function employeeGroup(role){
