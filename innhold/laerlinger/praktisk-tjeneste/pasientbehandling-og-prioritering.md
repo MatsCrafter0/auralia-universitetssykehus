@@ -18,7 +18,7 @@ Som ambulanselærling skal du bidra til trygg og troverdig pasientkontakt i Five
 | 🟡 **Gul**   | Alvorlig, men foreløpig stabil       |
 | 🟢 **Grønn** | Mindre alvorlig skade eller tilstand |
 
-Ved flere skadde skal behovet for ressurser og **ILH** varsles etter gjeldende rutiner. Se [Pasientprioritering og alvorlige hendelser](https://auralia-universitetssykehus.gitbook.io/auralia-universitetssykehus-docs/bFQZOUHYM4q2rhjvjWcV/pasientbehandling/pasientprioritering-og-alvorlige-hendelser).
+Ved flere skadde skal behovet for ressurser og **ILH** varsles etter gjeldende rutiner. Se [Pasientprioritering og alvorlige hendelser](https://matscrafter0.github.io/auralia-universitetssykehus/#/hovedhandbok/pasientbehandling/pasientprioritering-og-alvorlige-hendelser).
 
 ## LPS og realistisk RP
 
@@ -34,6 +34,6 @@ LPS følger **X–A–B–C–D–E**, der **X betyr egensikkerhet**. Bruk `/meg
 
 ## Når du må be om hjelp
 
-Ved uklar situasjon, alvorlig skade, behov for medikamenter eller behandling utenfor egen kompetanse skal du kontakte veileder eller kvalifisert personell. [Medisiner og medikamenter](https://auralia-universitetssykehus.gitbook.io/auralia-or-laerling-handbok/taoYXLjcjzz2zNBS7uaT/regler-og-ansvar/08-medisiner-og-medikamenter) beskriver lærlingens begrensninger.
+Ved uklar situasjon, alvorlig skade, behov for medikamenter eller behandling utenfor egen kompetanse skal du kontakte veileder eller kvalifisert personell. [Medisiner og medikamenter](https://matscrafter0.github.io/auralia-universitetssykehus/#/laerlinger/regler-og-ansvar/medisiner-og-medikamenter) beskriver lærlingens begrensninger.
 
 > Dette er veiledning for FiveM-rollespill, ikke medisinsk veiledning i virkeligheten.
