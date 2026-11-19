@@ -22,4 +22,4 @@ Taushetsplikt gjelder også når informasjon deles uformelt eller utenfor selve 
 
 ## Les de fullstendige reglene
 
-Se hovedhåndbokens [Taushetsplikt](https://auralia-universitetssykehus.gitbook.io/auralia-universitetssykehus-docs/bFQZOUHYM4q2rhjvjWcV/reglement/taushetsplikt) og [Utlevering av pasientopplysninger](https://auralia-universitetssykehus.gitbook.io/auralia-universitetssykehus-docs/bFQZOUHYM4q2rhjvjWcV/reglement/utlevering-av-pasientopplysninger). Lærlinghåndboken gir en kort innføring, men oppretter ikke egne unntak fra taushetsplikten.
+Se hovedhåndbokens [Taushetsplikt](https://matscrafter0.github.io/auralia-universitetssykehus/#/hovedhandbok/reglement/taushetsplikt) og [Utlevering av pasientopplysninger](https://matscrafter0.github.io/auralia-universitetssykehus/#/hovedhandbok/reglement/utlevering-av-pasientopplysninger). Lærlinghåndboken gir en kort innføring, men oppretter ikke egne unntak fra taushetsplikten.
