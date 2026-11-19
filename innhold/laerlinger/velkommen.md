@@ -15,8 +15,8 @@ Du skal bli kjent med sykehusets rutiner, CAD, samband, pasientkontakt, tjeneste
 
 ### Start her
 
-1. Les [Lærlingperioden](https://auralia-universitetssykehus.gitbook.io/auralia-or-laerling-handbok/taoYXLjcjzz2zNBS7uaT/oppstart-og-opplaering/01-laerlingperioden) og [Obligatoriske kurs](https://auralia-universitetssykehus.gitbook.io/auralia-or-laerling-handbok/taoYXLjcjzz2zNBS7uaT/oppstart-og-opplaering/02-obligatoriske-kurs).
-2. Bruk [Første vakt som lærling](https://auralia-universitetssykehus.gitbook.io/auralia-or-laerling-handbok/taoYXLjcjzz2zNBS7uaT/oppstart-og-opplaering/forste-vakt-som-laerling) som en praktisk forberedelsessjekkliste.
+1. Les [Lærlingperioden](https://matscrafter0.github.io/auralia-universitetssykehus/#/laerlinger/oppstart-og-opplaering/laerlingperioden) og [Obligatoriske kurs](https://matscrafter0.github.io/auralia-universitetssykehus/#/laerlinger/oppstart-og-opplaering/obligatoriske-kurs).
+2. Bruk [Første vakt som lærling](https://matscrafter0.github.io/auralia-universitetssykehus/#/laerlinger/oppstart-og-opplaering/forste-vakt-som-laerling) som en praktisk forberedelsessjekkliste.
 3. Les kategorien **Regler og ansvar** før du tar del i oppdrag.
 4. Gå videre til **Praktisk tjeneste** for samband, utstyr, pasientkontakt og samarbeid med politiet.
 5. Se **Vurdering og veien videre** når lærlingperioden nærmer seg slutten.
