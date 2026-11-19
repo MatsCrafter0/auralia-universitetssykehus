@@ -73,9 +73,15 @@ function loadEmployees(force=false){
    if(!['Ansattdata','Oppsigelse'].includes(sheet)){
     headers=headers.map((h,i)=>i===21&&/^(?:V|Kolonne 22|Ansettelsesdato)$/i.test(String(h).trim())?'Ansettelsesdato':h);
    }
+   // A nonexistent sheet name can silently return the first worksheet. Never show directorate data as another department.
+   const expectedRole={'Avd. Lege':/\b(?:overlege|lege)\b/i,'Avd. Psykiatrisk':/psykolog/i,'Avd. Ambulanse\/Paramedic':/paramedic/i,'AMB Skolen':/lærling/i};
+   const expected=expectedRole[sheet];
+   if(expected&&!rows.some(row=>row.some(value=>expected.test(String(value??''))))){
+    throw Error('Feil regnearkfane: '+sheet+' fikk ikke sine egne stillinger.');
+   }
    employeeHeaders=keep.map(i=>headers[i]);employeeRows=rows.map(row=>keep.map(i=>row[i]??'')).filter(row=>row.some(v=>String(v).trim()));
    employeeLoadedSheet=sheet;renderEmployees();
-  }catch(e){$('employee-status').textContent='Kunne ikke hente denne fanen. Kontroller lesetilgangen i Google Sheets.'}
+  }catch(e){$('employee-table').innerHTML='';$('employee-status').textContent=String(e.message||'Kunne ikke hente denne fanen.');}
  };
  script.src='https://docs.google.com/spreadsheets/d/'+employeeSheetId+'/gviz/tq?sheet='+encodeURIComponent(employeeSourceSheets[sheet]||sheet)+'&tqx='+encodeURIComponent('out:json;responseHandler:'+cb)+'&tq='+encodeURIComponent('select *')+'&_='+Date.now();
  script.onerror=()=>{if(settled||request!==employeeRequest)return;settled=true;cleanup();$('employee-status').textContent='Kunne ikke laste fanen. Kontroller tilgang i Google Sheets.'};
