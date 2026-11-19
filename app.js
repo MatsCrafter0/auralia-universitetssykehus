@@ -29,7 +29,7 @@ function employeeRoleColor(role){
  if(s==='legestudent')return 'rank-student';
  if(s==='psykolog')return 'rank-psykolog';
  if(s==='paramedic')return 'rank-paramedic';
- if(s==='lærling')return 'rank-laerling';
+ if(s==='lærling'||s==='elev')return 'rank-laerling';
  if(/^amb\s*[123]$/.test(s))return 'rank-amb';
  return '';
 }
@@ -92,7 +92,7 @@ function loadEmployees(force=false){
     headers=headers.map((h,i)=>i===21&&/^(?:V|Kolonne 22|Ansettelsesdato)$/i.test(String(h).trim())?'Ansettelsesdato':h);
    }
    // A nonexistent sheet name can silently return the first worksheet. Never show directorate data as another department.
-   const expectedRole={'Avd. Lege':/\b(?:overlege|lege)\b/i,'Avd. Psykiatrisk':/psykolog/i,'Avd. Ambulanse\/Paramedic':/paramedic/i,'AMB Skolen':/lærling/i};
+   const expectedRole={'Avd. Lege':/\b(?:overlege|lege)\b/i,'Avd. Psykiatrisk':/psykolog/i,'Avd. Ambulanse\/Paramedic':/paramedic/i,'AMB Skolen':/\b(?:lærling|elev)\b/i};
    if(sheet==='Avd. Ambulanse/Paramedic'&&!headers.some(h=>/^(stilling|kallesignal|tn)$/i.test(String(h).trim()))&&!rows.some(row=>row.some(v=>/paramedic|MED-30/i.test(String(v))))){
     throw Error('Ambulansefanen returnerte bare tomme kolonner. Kontroller at lenken peker til riktig fane.');
    }
