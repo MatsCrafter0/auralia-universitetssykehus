@@ -23,4 +23,4 @@ Dette er fiktive rutiner for FiveM RP og skal ikke brukes som medisinsk veiledni
 
 ## Les også
 
-Se hovedhåndbokens [Medisiner og medikamenter](https://auralia-universitetssykehus.gitbook.io/auralia-universitetssykehus-docs/bFQZOUHYM4q2rhjvjWcV/pasientbehandling/medisiner-og-medikamenter). Denne siden endrer ikke gradskravene eller hvem som kan håndtere medikamenter.
+Se hovedhåndbokens [Medisiner og medikamenter](https://matscrafter0.github.io/auralia-universitetssykehus/#/hovedhandbok/pasientbehandling/medisiner-og-medikamenter). Denne siden endrer ikke gradskravene eller hvem som kan håndtere medikamenter.
