@@ -35,3 +35,6 @@
 #employee-table td.employee-distinction.rank-top{background:#f1c232!important;color:#000!important;font-weight:800}
 #employee-table tbody tr.employee-group-start td{border-top:13px solid #0b1928!important}
 #employee-table tbody tr.employee-group-start td.employee-role{background-clip:padding-box}
+
+/* Distinksjoner uten grå bakgrunn som ønsket */
+#employee-table td.employee-distinction.rank-normal{background:transparent!important;color:#ffff00!important}
