@@ -35,11 +35,13 @@ function renderEmployees(){
   const role=roleIndex>=0?row[roleIndex]:'';
   const rank=employeeRoleColor(role);
   const group=employeeGroup(role);
-  const separator=roleIndex>=0&&prevGroup&&group!==prevGroup;
+  const dropdownSheet=['Ansattdata','Oppsigelse'].includes($('employee-sheet').value);
+  const separator=!dropdownSheet&&roleIndex>=0&&prevGroup&&group!==prevGroup;
   prevGroup=group;
   return '<tr'+(separator?' class="employee-group-start"':'')+'>'+row.map((v,i)=>{
    let cl='';
-   if(i===roleIndex&&rank)cl=' class="employee-role '+rank+'"';
+   if(i===roleIndex&&dropdownSheet)cl=' class="employee-dropdown '+(rank||'rank-unassigned')+'"';
+   else if(i===roleIndex&&rank)cl=' class="employee-role '+rank+'"';
    else if(i===badgeIndex)cl=' class="employee-distinction '+(String(role).toLocaleLowerCase('no').trim()==='helsedirektør'||/^ass\\.? helsedirektør$/i.test(String(role).trim())?'rank-top':'rank-normal')+'"';
    else if(i===statusIndex){const status=String(v).toLocaleLowerCase('no');if(status.includes('ledig'))cl=' class="employee-vacant"';else if(status.includes('ansatt'))cl=' class="employee-active"'}
    return '<td'+cl+'>'+esc(v)+'</td>';
