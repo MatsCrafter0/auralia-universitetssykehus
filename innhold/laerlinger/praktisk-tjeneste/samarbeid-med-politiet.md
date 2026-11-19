@@ -8,7 +8,7 @@ På noen oppdrag samarbeider ambulansetjenesten med politiet. Som lærling skal 
 * **Politiet håndterer politioppgaver**, som trusler, vold og sikring. Helsepersonell overtar ikke disse oppgavene.
 * **Helsepersonell håndterer pasientkontakt og behandling** innenfor egne roller og gjeldende RP-regler. Politiet bestemmer ikke den medisinske behandlingen.
 * **Følg veilederen og relevant operativ ansvarlig.** Meld behov for hjelp eller ressurser via gjeldende samband.
-* **Bevar taushetsplikten.** Ikke del pasientopplysninger med politiet bare fordi de spør. Se [Taushetsplikt](https://auralia-universitetssykehus.gitbook.io/auralia-or-laerling-handbok/taoYXLjcjzz2zNBS7uaT/regler-og-ansvar/05-taushetsplikt) og [Utlevering av pasientopplysninger](https://auralia-universitetssykehus.gitbook.io/auralia-universitetssykehus-docs/bFQZOUHYM4q2rhjvjWcV/reglement/utlevering-av-pasientopplysninger).
+* **Bevar taushetsplikten.** Ikke del pasientopplysninger med politiet bare fordi de spør. Se [Taushetsplikt](https://matscrafter0.github.io/auralia-universitetssykehus/#/laerlinger/regler-og-ansvar/taushetsplikt) og [Utlevering av pasientopplysninger](https://matscrafter0.github.io/auralia-universitetssykehus/#/hovedhandbok/reglement/utlevering-av-pasientopplysninger).
 
 ## Eksempel på samarbeid
 
@@ -20,6 +20,6 @@ På noen oppdrag samarbeider ambulansetjenesten med politiet. Som lærling skal 
 
 Ved usikkerhet om adgang til et område, pasientens sikkerhet eller arbeidsfordeling: spør veilederen eller operativ ansvarlig før du handler.
 
-Les også hovedhåndbokens [Samarbeid med nødetater](https://auralia-universitetssykehus.gitbook.io/auralia-universitetssykehus-docs/bFQZOUHYM4q2rhjvjWcV/operativ-tjeneste/samarbeid-med-nodetater).
+Les også hovedhåndbokens [Samarbeid med nødetater](https://matscrafter0.github.io/auralia-universitetssykehus/#/hovedhandbok/operativ-tjeneste/samarbeid-med-nodetater).
 
 > Dette gjelder samarbeid i FiveM-rollespill, ikke virkelige beredskapsprosedyrer.
