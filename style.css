@@ -6,3 +6,12 @@
 .employee-tools{display:flex;gap:12px;margin:24px 0 12px}.employee-tools input{flex:1;min-width:0;border:1px solid #355369;border-radius:10px;background:#142739;color:#eaf3fa;padding:12px 15px;font:inherit}.employee-tools button{background:#4bd4c0;border:0;border-radius:10px;padding:12px 18px;font-weight:700;color:#092128;cursor:pointer}.employee-tools button:hover{background:#7ee8d7}.employee-status{color:#a9c3cf;font-size:13px;min-height:20px;margin:8px 0 16px}.employee-table-wrap{border:1px solid #345065;border-radius:15px;overflow:auto;background:#101f30;max-height:75vh}#employee-table{width:100%;border-collapse:collapse;min-width:650px;text-align:left;font-size:14px}#employee-table th{position:sticky;top:0;background:#1c394b;color:#8bead7;font-weight:700;padding:14px 16px;border-bottom:1px solid #456072;white-space:nowrap}#employee-table td{padding:12px 16px;border-bottom:1px solid #294052;color:#e4edf2;white-space:nowrap}#employee-table tr:nth-child(even){background:#152a3b}#employee-table tbody tr:hover{background:#204254}@media(max-width:650px){.employee-tools{flex-direction:column}.employee-tools button{width:100%}}
 
 .employee-tab-label{display:block;color:#a9c3cf;font-size:13px;margin:25px 0 8px}#employee-sheet{display:block;width:100%;max-width:470px;border:1px solid #3a6070;border-radius:10px;background:#172e3f;color:#f1f8fa;padding:13px 15px;font:inherit;cursor:pointer}.employee-privacy{font-size:12px;line-height:1.6;color:#b4a58b;margin:12px 0 18px}
+
+/* Stillingsfarger inspirert av den opprinnelige ansattlisten */
+#employee-table td.employee-role,#employee-table td.employee-distinction{font-weight:800;color:#101820;text-align:center;border-bottom-color:#233748}
+#employee-table td.employee-role.role-gold,#employee-table td.employee-distinction.role-gold{background:#edc548;color:#15120a}
+#employee-table td.employee-role.role-orange,#employee-table td.employee-distinction.role-orange{background:#e99a36;color:#171008}
+#employee-table td.employee-role.role-default,#employee-table td.employee-distinction.role-default{background:#a1a1a1;color:#101820}
+#employee-table td.employee-distinction{color:#ffff3d!important;text-shadow:0 1px 1px #756c18}
+#employee-table td.employee-active{color:#b7f5df;font-weight:700}
+#employee-table td.employee-vacant{color:#ffc8c8;font-weight:700}
