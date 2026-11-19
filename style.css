@@ -56,3 +56,9 @@
 
 /* AMB 1/2/3 are dropdown-based rank cells in the ambulance sheet; match the grey spreadsheet fill. */
 #employee-table td.employee-role.rank-amb{background:#999999!important;color:#111!important;text-align:center!important;font-weight:800!important;vertical-align:middle}
+
+/* Ansatt/Ledig: all source spreadsheet dropdown values */
+#employee-table td.employee-on-leave{color:#ffe08a!important;font-weight:700}
+#employee-table td.employee-permitted{color:#c9b5ff!important;font-weight:700}
+#employee-table td.employee-substitute{color:#9edaff!important;font-weight:700}
+#employee-table td.employee-sick{color:#ffb5a8!important;font-weight:700}
