@@ -100,7 +100,18 @@ function loadEmployees(force=false){
    if(expected&&!rows.some(row=>row.some(value=>expected.test(String(value??''))))){
     throw Error('Feil regnearkfane: '+sheet+' fikk ikke sine egne stillinger.');
    }
-   employeeHeaders=keep.map(i=>headers[i]);employeeRows=rows.map(row=>keep.map(i=>row[i]??'')).filter(row=>row.some(v=>String(v).trim()));
+   employeeHeaders=keep.map(i=>headers[i]);
+   employeeRows=rows.map(row=>keep.map(i=>row[i]??'')).filter(row=>{
+    if(!row.some(v=>String(v).trim()))return false;
+    // Exclude footer/formatting rows containing only a distinction symbol.
+    // A real employee slot has a job title, callsign, name or service number.
+    const title=employeeHeaders.findIndex(h=>/^(stilling|stillingstittel|rolle)$/i.test(String(h).trim()));
+    const call=employeeHeaders.findIndex(h=>/kallesignal/i.test(String(h)));
+    const name=employeeHeaders.findIndex(h=>/^navn$/i.test(String(h).trim()));
+    const number=employeeHeaders.findIndex(h=>/^(tn|tjenestenr\.?|tjenestenummer)$/i.test(String(h).trim()));
+    const meaningful=[title,call,name,number].filter(i=>i>=0);
+    return meaningful.length?meaningful.some(i=>String(row[i]??'').trim()):true;
+   });
    employeeLoadedSheet=sheet;renderEmployees();
   }catch(e){if(!await showEmployeeFallback(sheet,request)){$('employee-table').innerHTML='';$('employee-status').textContent=String(e.message||'Kunne ikke hente denne fanen.');}}
  };
