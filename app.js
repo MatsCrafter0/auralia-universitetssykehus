@@ -100,7 +100,8 @@ function loadEmployees(force=false){
    employeeLoadedSheet=sheet;renderEmployees();
   }catch(e){if(!await showEmployeeFallback(sheet,request)){$('employee-table').innerHTML='';$('employee-status').textContent=String(e.message||'Kunne ikke hente denne fanen.');}}
  };
- script.src='https://docs.google.com/spreadsheets/d/'+employeeSheetId+'/gviz/tq?sheet='+encodeURIComponent(employeeSourceSheets[sheet]||sheet)+'&tqx='+encodeURIComponent('out:json;responseHandler:'+cb)+'&tq='+encodeURIComponent('select *')+'&_='+Date.now();
+ const sheetSelector=sheet==='Avd. Ambulanse/Paramedic'?'gid=957259046':'sheet='+encodeURIComponent(employeeSourceSheets[sheet]||sheet);
+ script.src='https://docs.google.com/spreadsheets/d/'+employeeSheetId+'/gviz/tq?'+sheetSelector+'&tqx='+encodeURIComponent('out:json;responseHandler:'+cb)+'&tq='+encodeURIComponent('select *')+'&_='+Date.now();
  script.onerror=async()=>{if(settled||request!==employeeRequest)return;settled=true;cleanup();if(!await showEmployeeFallback(sheet,request))$('employee-status').textContent='Kunne ikke laste fanen. Kontroller tilgang i Google Sheets.'};
  document.head.appendChild(script);
  setTimeout(async()=>{if(settled||request!==employeeRequest)return;settled=true;cleanup();if(!await showEmployeeFallback(sheet,request))$('employee-status').textContent='Google Sheets svarte ikke for denne fanen.'},12000);
