@@ -15,3 +15,9 @@
 #employee-table td.employee-distinction{color:#ffff3d!important;text-shadow:0 1px 1px #756c18}
 #employee-table td.employee-active{color:#b7f5df;font-weight:700}
 #employee-table td.employee-vacant{color:#ffc8c8;font-weight:700}
+
+/* Presis distinksjonsfarge: gul tekst, unntatt direktørstillinger */
+#employee-table td.employee-role:not(.role-director){background:transparent;color:#e4edf2;text-align:left;font-weight:normal}
+#employee-table td.employee-distinction{background:transparent!important;color:#ffff00!important;text-shadow:none!important;font-weight:800;text-align:center}
+#employee-table td.employee-distinction.role-director{background:#f5d33f!important;color:#111!important;text-shadow:none!important}
+#employee-table td.employee-role.role-director{background:transparent!important;color:#e4edf2!important;text-align:left;font-weight:normal}
