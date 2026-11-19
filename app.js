@@ -67,6 +67,11 @@ function loadEmployees(force=false){
    const headerAt=rows.findIndex(row=>row.some(v=>/^(navn|stilling|discord|ansatt\/ledig|kallesignal|tn)$/i.test(String(v).trim())));
    if(headerAt>=0&&headerAt<4){headers=rows[headerAt].map((v,i)=>String(v).trim()||headers[i]);rows=rows.slice(headerAt+1)}
    const keep=headers.map((h,i)=>i).filter(i=>rows.some(r=>{const v=String(r[i]??'').trim();return v!==''&&v!=='TRUE'&&v!=='FALSE'&&v!=='true'&&v!=='false'})||(!rows.length&&headers[i]));
+   // GViz sometimes exposes the date column as its spreadsheet letter "V" instead of the header in row 2.
+   // In the source workbook, column V is Ansettelsesdato on the department tabs.
+   if(!['Ansattdata','Oppsigelse'].includes(sheet)){
+    headers=headers.map((h,i)=>i===21&&/^(?:V|Kolonne 22|Ansettelsesdato)$/i.test(String(h).trim())?'Ansettelsesdato':h);
+   }
    employeeHeaders=keep.map(i=>headers[i]);employeeRows=rows.map(row=>keep.map(i=>row[i]??'')).filter(row=>row.some(v=>String(v).trim()));
    employeeLoadedSheet=sheet;renderEmployees();
   }catch(e){$('employee-status').textContent='Kunne ikke hente denne fanen. Kontroller lesetilgangen i Google Sheets.'}
