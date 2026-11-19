@@ -38,3 +38,15 @@
 
 /* Distinksjoner uten grå bakgrunn som ønsket */
 #employee-table td.employee-distinction.rank-normal{background:transparent!important;color:#ffff00!important}
+
+/* Google Sheets-rullegardinvalg gjenskapt som fargede stillingsmerker */
+#employee-table td.employee-dropdown{font-weight:800;text-align:center;color:#141414!important;background:#9c9c9c!important;box-shadow:inset 0 0 0 5px #101f30;border-radius:12px;min-width:125px}
+#employee-table td.employee-dropdown.rank-director{background:#f1c232!important}
+#employee-table td.employee-dropdown.rank-lead{background:#e69138!important}
+#employee-table td.employee-dropdown.rank-overlege{background:#ead1dc!important}
+#employee-table td.employee-dropdown.rank-lege{background:#bfe1f6!important}
+#employee-table td.employee-dropdown.rank-student{background:#cfe2f3!important}
+#employee-table td.employee-dropdown.rank-psykolog{background:#ffe5a0!important}
+#employee-table td.employee-dropdown.rank-paramedic{background:#ffcfc9!important}
+#employee-table td.employee-dropdown.rank-laerling{background:#fce5cd!important}
+#employee-table td.employee-dropdown.rank-unassigned{background:#607484!important;color:#fff!important}
