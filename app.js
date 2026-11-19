@@ -31,21 +31,21 @@ function renderEmployees(){
  const statusIndex=employeeHeaders.findIndex(h=>/ansatt\/ledig|status/i.test(h));
  const rows=employeeRows.filter(row=>row.some(v=>String(v).toLocaleLowerCase('no').includes(q)));
  let prevGroup='';
- $('employee-table').innerHTML='<thead><tr>'+employeeHeaders.map(h=>'<th scope="col">'+esc(h)+'</th>').join('')+'</tr></thead><tbody>'+rows.map(row=>{
+ $('employee-table').innerHTML='<thead><tr>'+employeeHeaders.map(h=>'<th scope="col">'+esc(h)+'</th>').join('')+'<th scope="col">Kursstatus</th></tr></thead><tbody>'+rows.map(row=>{
   const role=roleIndex>=0?row[roleIndex]:'';
   const rank=employeeRoleColor(role);
   const group=employeeGroup(role);
   const dropdownSheet=['Ansattdata','Oppsigelse'].includes($('employee-sheet').value);
   const separator=!dropdownSheet&&roleIndex>=0&&prevGroup&&group!==prevGroup;
   prevGroup=group;
-  return '<tr'+(separator?' class="employee-group-start"':'')+'>'+row.map((v,i)=>{
+  const courseIndices=employeeHeaders.map((h,i)=>/kurs|opplæring|sertifikat|kompetanse/i.test(h)?i:-1).filter(i=>i>=0);const courseSummary=courseIndices.length?courseIndices.map(i=>employeeHeaders[i]+': '+(String(row[i]??'').trim()||'Ikke registrert')).join(' · '):'Ikke registrert i ansattlisten';return '<tr'+(separator?' class="employee-group-start"':'')+'>'+row.map((v,i)=>{
    let cl='';
    if(i===roleIndex&&dropdownSheet)cl=' class="employee-dropdown '+(rank||'rank-unassigned')+'"';
    else if(i===roleIndex&&rank)cl=' class="employee-role '+rank+'"';
    else if(i===badgeIndex)cl=' class="employee-distinction '+(String(role).toLocaleLowerCase('no').trim()==='helsedirektør'||/^ass\.? helsedirektør$/i.test(String(role).trim())?'rank-top':'rank-normal')+'"';
    else if(i===statusIndex){const status=String(v).toLocaleLowerCase('no');if(status.includes('ledig'))cl=' class="employee-vacant"';else if(status.includes('ansatt'))cl=' class="employee-active"'}
    return '<td'+cl+'>'+esc(v)+'</td>';
-  }).join('')+'</tr>';
+  }).join('')+'<td>'+esc(courseSummary)+'</td></tr>';
  }).join('')+'</tbody>';
  $('employee-status').textContent=rows.length+' av '+employeeRows.length+' rader vises i '+$('employee-sheet').value+'.';
 }
