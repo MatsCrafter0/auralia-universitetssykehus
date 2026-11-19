@@ -35,6 +35,6 @@ Eksemplene viser **språkbruk**, ikke nye kallesignal, prosedyrer eller tildelte
 
 Vent til sambandet er ledig, snakk tydelig og unngå å avbryte andre. Avslutt samtaler med «Slutt» etter gjeldende sambandsregler. Oppgi aldri taushetsbelagte detaljer uten tjenstlig behov.
 
-Se hovedhåndbokens [Radio og samband](https://auralia-universitetssykehus.gitbook.io/auralia-universitetssykehus-docs/bFQZOUHYM4q2rhjvjWcV/operativ-tjeneste/radio-og-samband) og [Feil bruk av samband](https://auralia-universitetssykehus.gitbook.io/auralia-universitetssykehus-docs/bFQZOUHYM4q2rhjvjWcV/operativ-tjeneste/feil-bruk-av-samband).
+Se hovedhåndbokens [Radio og samband](https://matscrafter0.github.io/auralia-universitetssykehus/#/hovedhandbok/operativ-tjeneste/radio-og-samband) og [Feil bruk av samband](https://matscrafter0.github.io/auralia-universitetssykehus/#/hovedhandbok/operativ-tjeneste/feil-bruk-av-samband).
 
 > Prioriter viktig trafikk. Ikke fyll sambandet med unødvendig prat.
