@@ -13,7 +13,7 @@ Gå gjennom dette sammen med veilederen når det er relevant. Listen er **prakti
 * [ ] Har du forstått hvordan oppdraget følges opp i CAD og på samband?
 * [ ] Er du klar over egne begrensninger før dere drar?
 
-For utrykningskjøring gjelder gjeldende [Utrykningsprosedyrer](https://auralia-universitetssykehus.gitbook.io/auralia-universitetssykehus-docs/bFQZOUHYM4q2rhjvjWcV/operativ-tjeneste/utrykningsprosedyrer) og krav til [160-kurs](https://auralia-universitetssykehus.gitbook.io/auralia-universitetssykehus-docs/bFQZOUHYM4q2rhjvjWcV/kurs-og-sertifiseringer/160-kurs). Ikke anta at lærlingstatus gir selvstendig tillatelse til utrykningskjøring.
+For utrykningskjøring gjelder gjeldende [Utrykningsprosedyrer](https://matscrafter0.github.io/auralia-universitetssykehus/#/hovedhandbok/operativ-tjeneste/utrykningsprosedyrer) og krav til [160-kurs](https://matscrafter0.github.io/auralia-universitetssykehus/#/hovedhandbok/kurs-og-sertifiseringer/160-kurs). Ikke anta at lærlingstatus gir selvstendig tillatelse til utrykningskjøring.
 
 ## Før og under oppdrag
 
