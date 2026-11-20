@@ -67,7 +67,7 @@ function renderEmployees(){
  const statusIndex=employeeHeaders.findIndex(h=>/ansatt\/ledig|status/i.test(h));
  const rows=employeeRows.map((row,index)=>({row,index})).filter(({row})=>row.some(v=>String(v).toLocaleLowerCase('no').includes(q)));
  let prevGroup='';
- $('employee-table').innerHTML='<thead><tr>'+employeeHeaders.map(h=>'<th scope="col">'+esc(h)+'</th>').join('')+'</tr></thead><tbody>'+rows.map(row=>{
+ $('employee-table').innerHTML='<thead><tr>'+employeeHeaders.map(h=>'<th scope="col">'+esc(h)+'</th>').join('')+'</tr></thead><tbody>'+rows.map(({row,index})=>{
   const role=roleIndex>=0?row[roleIndex]:'';
   const rank=employeeRoleColor(role);
   const group=employeeGroup(role);
