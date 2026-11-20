@@ -159,3 +159,11 @@ article pre,article code{background:#183b43}
 @media(max-width:1050px){#home .home-content-layout{grid-template-columns:minmax(0,1fr) 280px;gap:16px}#home .home-navigation .choice{padding:21px}}
 @media(max-width:800px){#home .home-content-layout{grid-template-columns:1fr}#home .home-content-layout .pinned-notices{margin-top:0}#home .home-navigation .choices{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:650px){#home .home-content-layout{margin-top:28px}#home .home-navigation .choices,#home .home-navigation .quick-links{grid-template-columns:1fr;gap:16px}#home .home-navigation .quick-links{margin-top:16px}#home .home-navigation .choice{min-height:0;padding:26px}}
+
+
+/* Four primary links above a prominent full-width notice board link */
+#home .home-navigation .quick-links{grid-template-columns:minmax(0,1fr)}
+#home .home-navigation .quick-links .choice{min-height:220px;padding:30px}
+#home .home-navigation .quick-links .choice h2{font-size:clamp(26px,2.6vw,34px)}
+#home .home-navigation .quick-links .choice p{margin-bottom:20px}
+@media(max-width:650px){#home .home-navigation .quick-links .choice{padding:26px;min-height:220px}}
