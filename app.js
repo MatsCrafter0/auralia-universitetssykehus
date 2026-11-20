@@ -63,6 +63,9 @@ function employeeProfile(row){
 document.addEventListener('click',e=>{const tr=e.target.closest('#employee-table tbody tr[data-employee-index]');if(tr)employeeProfile(employeeRows[Number(tr.dataset.employeeIndex)])});
 document.addEventListener('keydown',e=>{const tr=e.target.closest('#employee-table tbody tr[data-employee-index]');if(tr&&(e.key==='Enter'||e.key===' ')){e.preventDefault();employeeProfile(employeeRows[Number(tr.dataset.employeeIndex)])}});
 function renderEmployees(){
+ const scrollable=['Ansattdata','Oppsigelse'].includes($('employee-sheet').value);
+ const tableWrap=$('employee-table').closest('.employee-table-wrap');
+ if(tableWrap)tableWrap.classList.toggle('employee-table-scrollable',scrollable);
  const q=$('employee-search').value.trim().toLocaleLowerCase('no');
  const roleIndex=employeeHeaders.findIndex(h=>/stilling|rolle|grad/i.test(h));
  const badgeIndex=employeeHeaders.findIndex(h=>/distinksjon/i.test(h));
