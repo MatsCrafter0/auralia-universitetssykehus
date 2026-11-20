@@ -209,3 +209,6 @@ body.search-open{overflow:hidden}
 .home-quick-access a:hover{background:#25565a;border-color:#95e6d7}
 #home .home-content-layout{margin-top:22px}
 @media(max-width:750px){.global-search-open{font-size:12px;padding:9px}.global-search-open kbd{display:none}.global-search-dialog{padding-top:5vh}.global-search-panel{max-height:90vh;padding:18px}}
+
+/* Align the four homepage cards: the contract card must not inherit the standalone top margin. */
+#home .home-navigation .choices > .contract-home{margin-top:0;max-width:none}
