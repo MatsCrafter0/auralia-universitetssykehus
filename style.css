@@ -62,3 +62,17 @@
 #employee-table td.employee-permitted{color:#c9b5ff!important;font-weight:700}
 #employee-table td.employee-substitute{color:#9edaff!important;font-weight:700}
 #employee-table td.employee-sick{color:#ffb5a8!important;font-weight:700}
+
+/* Personalkort: centered accessible modal */
+.employee-profile-overlay{position:fixed;inset:0;z-index:9999;background:rgba(2,10,22,.78);display:flex;align-items:center;justify-content:center;padding:20px;overflow-y:auto}
+.employee-profile-card{position:relative;background:#13283b;color:#edf7ff;border:1px solid #3a6677;border-radius:18px;box-shadow:0 24px 70px #0009;padding:30px;width:min(680px,100%);max-height:calc(100vh - 40px);overflow-y:auto}
+.employee-profile-close{position:absolute;right:16px;top:12px;border:0;background:#29485c;color:white;border-radius:9px;width:38px;height:38px;font-size:26px;cursor:pointer}
+.employee-profile-kicker{font-size:13px;color:#74dccc;margin-bottom:14px}
+.employee-profile-card h2{font-size:27px;margin:0 0 20px}.employee-profile-card h3{font-size:19px;margin:24px 0 12px}
+.employee-profile-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.employee-profile-fields>div{background:#1a3549;border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:5px;min-width:0}
+.employee-profile-fields small{color:#a7c2d0;font-size:12px}.employee-profile-fields strong{font-size:16px;overflow-wrap:anywhere}
+.employee-profile-courses{display:grid;gap:7px}.employee-profile-courses>div{display:flex;justify-content:space-between;align-items:center;gap:12px;background:#1a3549;padding:10px 12px;border-radius:8px}
+.employee-profile-courses strong{font-size:13px;text-align:right}.profile-course-ok{color:#74e3a3}.profile-course-no{color:#ffb2b2}.profile-course-progress{color:#ffdd84}
+#employee-table tbody tr[data-employee-index]{cursor:pointer}#employee-table tbody tr[data-employee-index]:hover td{box-shadow:inset 0 0 0 1px #4dd1c5}
+@media(max-width:520px){.employee-profile-card{padding:22px 16px}.employee-profile-fields{grid-template-columns:1fr}}
