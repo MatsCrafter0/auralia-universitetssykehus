@@ -8,4 +8,4 @@ export const firebaseConfig = {
   appId: '1:250206541604:web:933485d354eec7d3aa85b1'
 };
 // Settes til din Firebase Authentication UID etter første Google-innlogging.
-export const adminUid = '';
+export const adminUid = '7k5qP1Vn8paCMq4s25hJ4Rpf6Dh1';
