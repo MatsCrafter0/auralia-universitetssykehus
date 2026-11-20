@@ -1,11 +1,11 @@
-// Fyll inn web-appkonfigurasjonen fra Firebase Console > Project settings > Your apps.
-// Firebase web-konfigurasjonen er offentlig; ikke legg inn private nøkler her.
+// Firebase web-konfigurasjon (offentlig klientkonfigurasjon, ikke en privat nøkkel).
 export const firebaseConfig = {
-  apiKey: '',
-  authDomain: '',
-  projectId: '',
-  appId: ''
+  apiKey: 'AIzaSyADcE0v-334ntm09B-uw7YSE-mFCclxiSg',
+  authDomain: 'auralia-universitetssykehus.firebaseapp.com',
+  projectId: 'auralia-universitetssykehus',
+  storageBucket: 'auralia-universitetssykehus.firebasestorage.app',
+  messagingSenderId: '250206541604',
+  appId: '1:250206541604:web:933485d354eec7d3aa85b1'
 };
-// Finn din Google-kontos Firebase UID i Authentication > Users etter første innlogging.
-// Bruk SAMME UID i firestore.rules (ikke e-post eller passord).
+// Settes til din Firebase Authentication UID etter første Google-innlogging.
 export const adminUid = '';
