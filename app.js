@@ -49,7 +49,7 @@ function employeeProfile(row){
  const fields=[['Tjenestenummer',get(/^(?:tn|tjeneste(?:nummer|nr))$/i)],['Kallesignal',get(/kallesignal/i)],['Stilling',get(/stilling|rolle|grad/i)],['Avdeling',$('employee-sheet').value],['Status',get(/ansatt\/ledig|status/i)],['Ansatt dato',get(/ansettelsesdato|ansatt dato|ansettelse/i)]];
  const courseNames=['Cad','Samband','160.0','LPS','LA-SAR','LA','LA Instruktør','Dykker','ILH','ILH Instruktør','Instruktør'];
  const courseCols=employeeHeaders.map((h,i)=>({h:String(h),v:String(row[i]??'').trim()})).filter(x=>courseNames.some(n=>n.toLowerCase()===x.h.toLowerCase())||/kurs|kompetanse|opplæring|godkjenn|sertif|utdanning|eksamen|prøve|bevis|hlr|akutt|utrykning/i.test(x.h));
- const courseLabel=v=>/^(?:1|true|ja|x|✓|✔)$/i.test(v)?'Fullført':/^(?:0|false|nei)$/i.test(v)?'Ikke fullført':v||'Ikke registrert';
+ const courseLabel=v=>/^(?:1|true|ja|x|✓|✔|godkjent|bestått|fullført)$/i.test(v)?'Godkjent':/^(?:0|false|nei|ikke godkjent|ikke bestått|ikke fullført)$/i.test(v)?'Ikke Godkjent':v||'Ikke registrert';
  const statusColor=v=>/^(?:ja|bestått|godkjent|fullført|true|x|✓|✔|1)$/i.test(v)?'profile-course-ok':/under|pågår|opplæring/i.test(v)?'profile-course-progress':/^(?:nei|ikke bestått|ikke godkjent|false|0)$/i.test(v)?'profile-course-no':'';
  const old=document.getElementById('employee-profile');if(old)old.remove();
  const overlay=document.createElement('div');overlay.id='employee-profile';overlay.className='employee-profile-overlay';
