@@ -124,3 +124,19 @@ article pre,article code{background:#183b43}
 .employee-profile-fields>div,.employee-profile-courses>div{background:#1c424b}
 @media(max-width:980px){#home .choices{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:650px){#home{padding:64px 18px 72px}#home .choices,#home .quick-links{grid-template-columns:1fr;gap:16px}#home .quick-links{margin-top:16px}#home .choice{min-height:0;padding:26px}#home .choice .tile{margin-bottom:18px}#home .choice p{margin-bottom:24px}.hero h1{font-size:clamp(40px,11vw,60px)}}
+
+
+/* Pinned public notices on the homepage */
+#home .pinned-notices[hidden]{display:none!important}
+#home .pinned-notices{margin:36px 0 8px;padding:26px;border-radius:20px;background:linear-gradient(140deg,#1b4549,#12303b);border:1px solid #78c9b780;box-shadow:0 12px 34px #020d132e}
+#home .pinned-notices-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-bottom:20px}
+#home .pinned-notices-heading h2{margin:8px 0 0;font-size:clamp(23px,3vw,31px);color:#f0fffa}
+#home .pinned-notices-heading a{color:#9cf0de;font-weight:700;text-decoration:none}
+#home .pinned-notices-heading a:hover{text-decoration:underline}
+#home .pinned-notices-list{display:grid;gap:14px}
+#home .pinned-notice{background:#0c2731;border:1px solid #508d8a80;border-radius:14px;padding:20px;min-width:0}
+#home .pinned-notice-meta{font-size:12px;letter-spacing:.08em;font-weight:800;color:#a0e9d6}
+#home .pinned-notice h3{font-size:clamp(19px,2.4vw,25px);color:#fff;margin:10px 0}
+#home .pinned-notice p{white-space:pre-wrap;overflow-wrap:anywhere;color:#d1e8e5;line-height:1.6;margin:0}
+#home .pinned-notices+.choices{margin-top:28px}
+@media(max-width:650px){#home .pinned-notices{padding:18px;margin-top:26px}#home .pinned-notice{padding:16px}}
