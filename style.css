@@ -76,3 +76,6 @@
 .employee-profile-courses strong{font-size:13px;text-align:right}.profile-course-ok{color:#74e3a3}.profile-course-no{color:#ffb2b2}.profile-course-progress{color:#ffdd84}
 #employee-table tbody tr[data-employee-index]{cursor:pointer}#employee-table tbody tr[data-employee-index]:hover td{box-shadow:inset 0 0 0 1px #4dd1c5}
 @media(max-width:520px){.employee-profile-card{padding:22px 16px}.employee-profile-fields{grid-template-columns:1fr}}
+
+/* Egen vertikal rulling kun i Ansattdata og Oppsigelse */
+.employee-table-wrap.employee-table-scrollable{max-height:75vh;overflow:auto}
