@@ -68,15 +68,16 @@ function renderEmployees(){
  const badgeIndex=employeeHeaders.findIndex(h=>/distinksjon/i.test(h));
  const statusIndex=employeeHeaders.findIndex(h=>/ansatt\/ledig|status/i.test(h));
  const rows=employeeRows.map((row,index)=>({row,index})).filter(({row})=>row.some(v=>String(v).toLocaleLowerCase('no').includes(q)));
+ const visibleColumns=employeeHeaders.map((h,i)=>i).filter(i=>!/^(?:Cad|Samband|160\.0|LPS|LA-SAR|LA|LA Instruktør|Dykker|ILH|ILH Instruktør|Instruktør)$/i.test(String(employeeHeaders[i]).trim()));
  let prevGroup='';
- $('employee-table').innerHTML='<thead><tr>'+employeeHeaders.map(h=>'<th scope="col">'+esc(h)+'</th>').join('')+'</tr></thead><tbody>'+rows.map(({row,index})=>{
+ $('employee-table').innerHTML='<thead><tr>'+visibleColumns.map(i=>'<th scope="col">'+esc(employeeHeaders[i])+'</th>').join('')+'</tr></thead><tbody>'+rows.map(({row,index})=>{
   const role=roleIndex>=0?row[roleIndex]:'';
   const rank=employeeRoleColor(role);
   const group=employeeGroup(role);
   const dropdownSheet=['Ansattdata','Oppsigelse'].includes($('employee-sheet').value);
   const separator=!dropdownSheet&&roleIndex>=0&&prevGroup&&group!==prevGroup;
   prevGroup=group;
-  return '<tr data-employee-index="'+index+'" tabindex="0" role="button" aria-label="Åpne personalkort"'+(separator?' class="employee-group-start"':'')+'>'+row.map((v,i)=>{
+  return '<tr data-employee-index="'+index+'" tabindex="0" role="button" aria-label="Åpne personalkort"'+(separator?' class="employee-group-start"':'')+'>'+visibleColumns.map(i=>{const v=row[i];
    let cl='';
    if(i===roleIndex&&dropdownSheet)cl=' class="employee-dropdown '+(rank||'rank-unassigned')+'"';
    else if(i===roleIndex&&rank)cl=' class="employee-role '+rank+'"';
