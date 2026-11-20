@@ -1,6 +1,6 @@
 // Firebase web-konfigurasjon (offentlig klientkonfigurasjon, ikke en privat nøkkel).
 export const firebaseConfig = {
-  apiKey: 'AIzaSyADcE0v-334ntm09B-uw7YSE-mFCclxjSg',
+  apiKey: 'AIzaSyADcEOv-334ntm09B-uw7YSE-mFCclxjSg',
   authDomain: 'auralia-universitetssykehus.firebaseapp.com',
   projectId: 'auralia-universitetssykehus',
   storageBucket: 'auralia-universitetssykehus.firebasestorage.app',
