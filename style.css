@@ -79,3 +79,48 @@
 
 /* Egen vertikal rulling kun i Ansattdata og Oppsigelse */
 .employee-table-wrap.employee-table-scrollable{max-height:75vh;overflow:auto}
+
+
+/* Healthcare visual refresh: consistent, accessible teal/navy palette */
+:root{color:#eef8f7;background:#081a21;color-scheme:dark}
+body{background:radial-gradient(ellipse at 78% 0%,#123d42 0,transparent 46%),linear-gradient(180deg,#0a222b 0%,#081923 70%);color:#eef8f7}
+header{background:#0b2830ed;border-bottom:1px solid #4c8b8a40}
+.logo-icon{background:#bde9df;color:#0b3436}
+.header-right,.breadcrumbs{color:#a9c9c9}
+#home{max-width:1240px;padding-top:84px}
+.hero{max-width:900px}
+.hero h1{max-width:900px;letter-spacing:-.052em}
+.hero em{color:#82e0cd}
+.hero p{color:#b8d3d3}
+.kicker,.choice small{color:#86e5d0}
+#home .choices{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:48px}
+#home .quick-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:20px}
+#home .quick-links .choice{max-width:none;margin:0}
+#home .choice{display:flex;flex-direction:column;align-items:flex-start;min-width:0;min-height:300px;padding:30px;border-radius:20px;background:linear-gradient(155deg,#193b43,#102b36);border:1px solid #5d969640;box-shadow:0 10px 28px #020d1326}
+#home .choice:hover{border-color:#8de6d5;background:linear-gradient(155deg,#20505a,#13343e);box-shadow:0 16px 35px #020d134a}
+#home .choice:focus-visible{outline:3px solid #a3f0df;outline-offset:4px}
+#home .choice .tile{flex-shrink:0;background:#235a5b;color:#b2f2e4;margin-bottom:22px}
+#home .choice h2{font-size:clamp(23px,2.2vw,29px);line-height:1.2;margin:12px 0 10px}
+#home .choice p{min-height:0;margin:0 0 22px;color:#c2d8d9;line-height:1.65}
+#home .choice b{margin-top:auto;color:#9cf0de}
+#sidebar{background:#0b2530;border-right-color:#437b7d55}
+#search,.employee-tools input{background:#112f39;border-color:#477c80;color:#f0faf9}
+nav a:hover,nav a.active{background:#214b50;color:#b5f6e6}
+nav .section,.back,#pager a,article a{color:#91e6d2}
+article{color:#d6e8e8}
+article h1,article h2,article h3{color:#f5fffd}
+article blockquote{border-left-color:#70d9c6}
+article pre,article code{background:#183b43}
+#employees .employee-intro,#contract p{color:#bed5d5}
+#employee-sheet{background:#143540;border-color:#4d8586}
+.employee-table-wrap{background:#0e2933;border-color:#426d73}
+#employee-table th{background:#1b4950;color:#b3f4e4}
+#employee-table td{border-bottom-color:#31535a}
+#employee-table tr:nth-child(even){background:#15343e}
+#employee-table tbody tr:hover{background:#24535a}
+.employee-tools button,.contract-button{background:#8ce3d0;color:#092b30}
+.employee-tools button:hover,.contract-button:hover{background:#b1f3e5}
+.employee-profile-card{background:#12313b;border-color:#50898a}
+.employee-profile-fields>div,.employee-profile-courses>div{background:#1c424b}
+@media(max-width:980px){#home .choices{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){#home{padding:64px 18px 72px}#home .choices,#home .quick-links{grid-template-columns:1fr;gap:16px}#home .quick-links{margin-top:16px}#home .choice{min-height:0;padding:26px}#home .choice .tile{margin-bottom:18px}#home .choice p{margin-bottom:24px}.hero h1{font-size:clamp(40px,11vw,60px)}}
