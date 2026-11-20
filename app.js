@@ -47,11 +47,13 @@ function employeeProfile(row){
  const get=(re)=>{const i=employeeHeaders.findIndex(h=>re.test(String(h).trim()));return i>=0?String(row[i]??'').trim():''};
  const name=get(/^navn$|ansatt.*navn|discord.*navn/i)||'Ansatt';
  const fields=[['Tjenestenummer',get(/^(?:tn|tjeneste(?:nummer|nr))$/i)],['Kallesignal',get(/kallesignal/i)],['Stilling',get(/stilling|rolle|grad/i)],['Avdeling',$('employee-sheet').value],['Status',get(/ansatt\/ledig|status/i)],['Ansatt dato',get(/ansettelsesdato|ansatt dato|ansettelse/i)]];
- const courseCols=employeeHeaders.map((h,i)=>({h:String(h),v:String(row[i]??'').trim()})).filter(x=>/kurs|kompetanse|opplæring|godkjenn|sertif|utdanning|eksamen|prøve|bevis|hlr|akutt|utrykning/i.test(x.h));
+ const courseNames=['Cad','Samband','160.0','LPS','LA-SAR','LA','LA Instruktør','Dykker','ILH','ILH Instruktør','Instruktør'];
+ const courseCols=employeeHeaders.map((h,i)=>({h:String(h),v:String(row[i]??'').trim()})).filter(x=>courseNames.some(n=>n.toLowerCase()===x.h.toLowerCase())||/kurs|kompetanse|opplæring|godkjenn|sertif|utdanning|eksamen|prøve|bevis|hlr|akutt|utrykning/i.test(x.h));
+ const courseLabel=v=>/^(?:1|true|ja|x|✓|✔)$/i.test(v)?'Fullført':/^(?:0|false|nei)$/i.test(v)?'Ikke fullført':v||'Ikke registrert';
  const statusColor=v=>/^(?:ja|bestått|godkjent|fullført|true|x|✓|✔|1)$/i.test(v)?'profile-course-ok':/under|pågår|opplæring/i.test(v)?'profile-course-progress':/^(?:nei|ikke bestått|ikke godkjent|false|0)$/i.test(v)?'profile-course-no':'';
  const old=document.getElementById('employee-profile');if(old)old.remove();
  const overlay=document.createElement('div');overlay.id='employee-profile';overlay.className='employee-profile-overlay';
- overlay.innerHTML='<section class="employee-profile-card" role="dialog" aria-modal="true" aria-label="Personalkort for '+esc(name)+'"><button type="button" class="employee-profile-close" aria-label="Lukk personalkort">×</button><div class="employee-profile-kicker">🏥 Auralia Universitetssykehus</div><h2>👤 '+esc(name)+'</h2><div class="employee-profile-fields">'+fields.filter(x=>x[1]).map(([k,v])=>'<div><small>'+esc(k)+'</small><strong>'+esc(v)+'</strong></div>').join('')+'</div><h3>🎓 Kurs og kompetanse</h3>'+(courseCols.length?'<div class="employee-profile-courses">'+courseCols.map(x=>'<div><span>'+esc(x.h)+'</span><strong class="'+statusColor(x.v)+'">'+esc(x.v||'Ikke registrert')+'</strong></div>').join('')+'</div>':'<p>Ingen egne kurskolonner er registrert for denne avdelingen.</p>')+'</section>';
+ overlay.innerHTML='<section class="employee-profile-card" role="dialog" aria-modal="true" aria-label="Personalkort for '+esc(name)+'"><button type="button" class="employee-profile-close" aria-label="Lukk personalkort">×</button><div class="employee-profile-kicker">🏥 Auralia Universitetssykehus</div><h2>👤 '+esc(name)+'</h2><div class="employee-profile-fields">'+fields.filter(x=>x[1]).map(([k,v])=>'<div><small>'+esc(k)+'</small><strong>'+esc(v)+'</strong></div>').join('')+'</div><h3>🎓 Kurs og kompetanse</h3>'+(courseCols.length?'<div class="employee-profile-courses">'+courseCols.map(x=>'<div><span>'+esc(x.h)+'</span><strong class="'+statusColor(x.v)+'">'+esc(courseLabel(x.v))+'</strong></div>').join('')+'</div>':'<p>Ingen egne kurskolonner er registrert for denne avdelingen.</p>')+'</section>';
  document.body.appendChild(overlay);
  const close=()=>{overlay.remove();document.removeEventListener('keydown',onKey)};
  const onKey=e=>{if(e.key==='Escape')close()};
@@ -106,7 +108,10 @@ function loadEmployees(force=false){
    let headers=cols.map((col,i)=>col.label||col.id||'Kolonne '+(i+1));
    const headerAt=rows.findIndex(row=>row.some(v=>/^(navn|stilling|discord|ansatt\/ledig|kallesignal|tn)$/i.test(String(v).trim())));
    if(headerAt>=0&&headerAt<4){headers=rows[headerAt].map((v,i)=>String(v).trim()||headers[i]);rows=rows.slice(headerAt+1)}
-   const keep=headers.map((h,i)=>i).filter(i=>rows.some(r=>{const v=String(r[i]??'').trim();return v!==''&&v!=='TRUE'&&v!=='FALSE'&&v!=='true'&&v!=='false'})||(!rows.length&&headers[i]));
+   const courseNames={9:'Cad',10:'Samband',11:'160.0',12:'LPS',13:'LA-SAR',14:'LA',15:'LA Instruktør',16:'Dykker',17:'ILH',18:'ILH Instruktør',19:'Instruktør'};
+   if(!['Ansattdata','Oppsigelse'].includes(sheet))headers=headers.map((h,i)=>courseNames[i]&&/^(?:[A-Z]{1,2}|Kolonne \d+|)$/i.test(String(h).trim())?courseNames[i]:h);
+   const courseColumn=i=>!['Ansattdata','Oppsigelse'].includes(sheet)&&i>=9&&i<=19;
+   const keep=headers.map((h,i)=>i).filter(i=>courseColumn(i)||rows.some(r=>String(r[i]??'').trim()!=='')||(!rows.length&&headers[i]));
    // GViz sometimes exposes the date column as its spreadsheet letter "V" instead of the header in row 2.
    // In the source workbook, column V is Ansettelsesdato on the department tabs.
    if(!['Ansattdata','Oppsigelse'].includes(sheet)){
