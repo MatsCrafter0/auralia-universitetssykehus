@@ -43,12 +43,29 @@ function employeeGroup(role){
  if(/^(overlege|lege|legestudent|psykolog|paramedic|lærling|amb [123])$/.test(s))return s;
  return s;
 }
+function employeeProfile(row){
+ const get=(re)=>{const i=employeeHeaders.findIndex(h=>re.test(String(h).trim()));return i>=0?String(row[i]??'').trim():''};
+ const name=get(/^navn$|ansatt.*navn|discord.*navn/i)||'Ansatt';
+ const fields=[['Tjenestenummer',get(/^(?:tn|tjeneste(?:nummer|nr))$/i)],['Kallesignal',get(/kallesignal/i)],['Stilling',get(/stilling|rolle|grad/i)],['Avdeling',$('employee-sheet').value],['Status',get(/ansatt\\/ledig|status/i)],['Ansatt dato',get(/ansettelsesdato|ansatt dato|ansettelse/i)]];
+ const courseCols=employeeHeaders.map((h,i)=>({h:String(h),v:String(row[i]??'').trim()})).filter(x=>/kurs|kompetanse|opplæring|godkjenn|sertif|utdanning|eksamen|prøve|bevis|hlr|akutt|utrykning/i.test(x.h));
+ const statusColor=v=>/^(?:ja|bestått|godkjent|fullført|true|x|✓|✔|1)$/i.test(v)?'profile-course-ok':/under|pågår|opplæring/i.test(v)?'profile-course-progress':/^(?:nei|ikke bestått|ikke godkjent|false|0)$/i.test(v)?'profile-course-no':'';
+ const old=document.getElementById('employee-profile');if(old)old.remove();
+ const overlay=document.createElement('div');overlay.id='employee-profile';overlay.className='employee-profile-overlay';
+ overlay.innerHTML='<section class="employee-profile-card" role="dialog" aria-modal="true" aria-label="Personalkort for '+esc(name)+'"><button type="button" class="employee-profile-close" aria-label="Lukk personalkort">×</button><div class="employee-profile-kicker">🏥 Auralia Universitetssykehus</div><h2>👤 '+esc(name)+'</h2><div class="employee-profile-fields">'+fields.filter(x=>x[1]).map(([k,v])=>'<div><small>'+esc(k)+'</small><strong>'+esc(v)+'</strong></div>').join('')+'</div><h3>🎓 Kurs og kompetanse</h3>'+(courseCols.length?'<div class="employee-profile-courses">'+courseCols.map(x=>'<div><span>'+esc(x.h)+'</span><strong class="'+statusColor(x.v)+'">'+esc(x.v||'Ikke registrert')+'</strong></div>').join('')+'</div>':'<p>Ingen egne kurskolonner er registrert for denne avdelingen.</p>')+'</section>';
+ document.body.appendChild(overlay);
+ const close=()=>{overlay.remove();document.removeEventListener('keydown',onKey)};
+ const onKey=e=>{if(e.key==='Escape')close()};
+ overlay.addEventListener('click',e=>{if(e.target===overlay||e.target.closest('.employee-profile-close'))close()});
+ document.addEventListener('keydown',onKey);overlay.querySelector('button').focus();
+}
+document.addEventListener('click',e=>{const tr=e.target.closest('#employee-table tbody tr[data-employee-index]');if(tr)employeeProfile(employeeRows[Number(tr.dataset.employeeIndex)])});
+document.addEventListener('keydown',e=>{const tr=e.target.closest('#employee-table tbody tr[data-employee-index]');if(tr&&(e.key==='Enter'||e.key===' ')){e.preventDefault();employeeProfile(employeeRows[Number(tr.dataset.employeeIndex)])}});
 function renderEmployees(){
  const q=$('employee-search').value.trim().toLocaleLowerCase('no');
  const roleIndex=employeeHeaders.findIndex(h=>/stilling|rolle|grad/i.test(h));
  const badgeIndex=employeeHeaders.findIndex(h=>/distinksjon/i.test(h));
  const statusIndex=employeeHeaders.findIndex(h=>/ansatt\/ledig|status/i.test(h));
- const rows=employeeRows.filter(row=>row.some(v=>String(v).toLocaleLowerCase('no').includes(q)));
+ const rows=employeeRows.map((row,index)=>({row,index})).filter(({row})=>row.some(v=>String(v).toLocaleLowerCase('no').includes(q)));
  let prevGroup='';
  $('employee-table').innerHTML='<thead><tr>'+employeeHeaders.map(h=>'<th scope="col">'+esc(h)+'</th>').join('')+'</tr></thead><tbody>'+rows.map(row=>{
   const role=roleIndex>=0?row[roleIndex]:'';
@@ -57,7 +74,7 @@ function renderEmployees(){
   const dropdownSheet=['Ansattdata','Oppsigelse'].includes($('employee-sheet').value);
   const separator=!dropdownSheet&&roleIndex>=0&&prevGroup&&group!==prevGroup;
   prevGroup=group;
-  return '<tr'+(separator?' class="employee-group-start"':'')+'>'+row.map((v,i)=>{
+  return '<tr data-employee-index="'+index+'" tabindex="0" role="button" aria-label="Åpne personalkort"'+(separator?' class="employee-group-start"':'')+'>'+row.map((v,i)=>{
    let cl='';
    if(i===roleIndex&&dropdownSheet)cl=' class="employee-dropdown '+(rank||'rank-unassigned')+'"';
    else if(i===roleIndex&&rank)cl=' class="employee-role '+rank+'"';
