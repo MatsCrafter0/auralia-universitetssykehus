@@ -13,7 +13,7 @@ function events(y){
  const e=easter(y);const movable=(offset,title,type='holiday')=>add(addDays(e,offset),title,type);
  fixed(1,1,'Første nyttårsdag');fixed(5,1,'Arbeidernes dag');fixed(5,17,'Grunnlovsdagen');fixed(12,25,'Første juledag');fixed(12,26,'Andre juledag');
  movable(-7,'Palmesøndag','observance');movable(-3,'Skjærtorsdag');movable(-2,'Langfredag');movable(-1,'Påskeaften','observance');movable(0,'Første påskedag');movable(1,'Andre påskedag');movable(39,'Kristi himmelfartsdag');movable(48,'Pinseaften','observance');movable(49,'Første pinsedag');movable(50,'Andre pinsedag');
- fixed(2,6,'Samenes nasjonaldag','observance');fixed(3,8,'Den internasjonale kvinnedagen','observance');fixed(5,8,'Frigjøringsdagen','observance');fixed(6,23,'Sankthansaften','observance');fixed(6,24,'Sankthans','observance');fixed(10,24,'FN-dagen','observance');fixed(10,31,'Halloween','observance');fixed(12,24,'Julaften','observance');fixed(12,31,'Nyttårsaften','observance');
+ fixed(2,6,'Samenes nasjonaldag','observance');fixed(5,13,'Dræggens Buekorps – stiftelsesdag','observance','Årlig markering av stiftelsesdagen til Dræggens Buekorps.');fixed(3,8,'Den internasjonale kvinnedagen','observance');fixed(5,8,'Frigjøringsdagen','observance');fixed(6,23,'Sankthansaften','observance');fixed(6,24,'Sankthans','observance');fixed(10,24,'FN-dagen','observance');fixed(10,31,'Halloween','observance');fixed(12,24,'Julaften','observance');fixed(12,31,'Nyttårsaften','observance');
  const nthSunday=(month,n)=>{const first=utcDate(y,month,1).getUTCDay();return 1+(7-first)%7+(n-1)*7};
  fixed(2,nthSunday(1,2),'Morsdag','observance');fixed(11,nthSunday(10,2),'Farsdag','observance');
  const advent=addDays(utcDate(y,11,25),-((utcDate(y,11,25).getUTCDay()+7)%7)-21);
