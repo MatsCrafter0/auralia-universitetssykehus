@@ -430,5 +430,58 @@
         }
       ]
     }
+  ],
+  "lover-og-regler": [
+    {
+      "title": "Lover og regler",
+      "path": "velkommen",
+      "children": [
+        {
+          "title": "Helsepersonelloven",
+          "path": "helsepersonelloven",
+          "children": []
+        },
+        {
+          "title": "Taushetsplikt og informasjonsdeling",
+          "path": "taushetsplikt",
+          "children": []
+        },
+        {
+          "title": "Pasientrettigheter og samtykke",
+          "path": "pasientrettigheter",
+          "children": []
+        },
+        {
+          "title": "Journalføring og personvern",
+          "path": "journal-og-personvern",
+          "children": []
+        },
+        {
+          "title": "Spesialisthelsetjeneste og akutt helsehjelp",
+          "path": "spesialisthelsetjenesten",
+          "children": []
+        },
+        {
+          "title": "Psykisk helsevern",
+          "path": "psykisk-helsevern",
+          "children": []
+        },
+        {
+          "title": "Smittevern og hygiene",
+          "path": "smittevern",
+          "children": []
+        },
+        {
+          "title": "Meldeplikt, avvik og tilsyn",
+          "path": "meldeplikt-og-avvik",
+          "children": []
+        },
+        {
+          "title": "Interne regler for helse-RP",
+          "path": "interne-rp-regler",
+          "children": []
+        }
+      ]
+    }
   ]
 }
