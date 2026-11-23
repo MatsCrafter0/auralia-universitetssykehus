@@ -190,7 +190,7 @@ body.search-open{overflow:hidden}
 
 /* Forsidebilde: norsk ambulanse utendørs, med mørk fade for lesbarhet. */
 #home{position:relative;isolation:isolate}
-#home::before{content:"";position:absolute;z-index:-2;top:0;left:50%;transform:translateX(-50%);width:100vw;height:660px;pointer-events:none;opacity:.78;background:linear-gradient(90deg,#09111ef5 0%,#09111ec9 42%,#09111e50 100%),linear-gradient(0deg,#09111e 0%,transparent 68%),url("https://commons.wikimedia.org/wiki/Special:FilePath/Norwegian%20ambulance%20at%20Stord.jpg?width=1600") center 52%/cover no-repeat}
+#home::before{content:"";position:absolute;z-index:-2;top:0;left:50%;transform:translateX(-50%);width:100vw;height:660px;pointer-events:none;opacity:.78;background:linear-gradient(90deg,#09111ef5 0%,#09111ec9 42%,#09111e50 100%),linear-gradient(0deg,#09111e 0%,transparent 68%),url("https://commons.wikimedia.org/wiki/Special:FilePath/Two_ambulances_at_night.JPG?width=1600") center 52%/cover no-repeat}
 #home::after{content:"";position:absolute;z-index:-1;top:450px;left:50%;transform:translateX(-50%);width:100vw;height:280px;pointer-events:none;background:linear-gradient(180deg,transparent,#09111e 80%)}
 #home .hero{position:relative;text-shadow:0 3px 22px #0009}
 #home .hero h1{font-size:clamp(48px,7vw,82px)}
@@ -202,3 +202,6 @@ body.search-open{overflow:hidden}
 #home .ambulance-photo-credit{font-size:11px;color:#a8bac5;text-align:right;margin:22px 0 0}
 #home .ambulance-photo-credit a{color:#b9d7e0}
 @media(max-width:650px){#home::before{height:550px;background-position:58% center}#home::after{top:350px}}
+
+/* Utrykningsmotiv: mer av hendelsesstedet og blålyspreg. */
+#home::before{opacity:.9;background-position:center 50%}
